@@ -1,0 +1,41 @@
+<%= form_for(@runner) do |f| %>
+<ul>
+      <% @runner.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+  <fieldset>
+    <legend>Runner Details</legend>
+    <div class="field">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    </div>
+    <div class="field">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
+    <div class="field">
+      <%= f.label :gender %>
+      <%= radio_button :runner, :gender, 'Male' %> Male
+      <%= radio_button :runner, :gender, 'Female' %> Female
+    </div>
+    <div class="field">
+      <%= f.label :county %>
+      <%= f.text_field :county %>
+    </div>
+    <div class="field">
+      <%= f.label :club %>
+      <%= f.text_field :club %>
+    </div>
+    <div class="field">
+      <%= f.label :date_of_birth %>
+      <%= f.date_select :date_of_birth, {:order => [:day, :month, :year],:prompt => true, :start_year => 1940, :end_year => Time.now.year} %>
+    </div>
+  </fieldset>
+
+  <div class="actions">
+    
+    <%= f.submit "Submit"%>
+  
+  </div>
+
+<% end %>

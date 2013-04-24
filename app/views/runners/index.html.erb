@@ -1,0 +1,31 @@
+<h1>Runners Index page</h1>
+<p><%= @runners.count %> runners listed</p>
+<%= notice %>
+<p><%= link_to "Add Runner", new_runner_path %></p>
+<table>
+    <thead>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Gender</th>
+    <th>Date of Birth</th>
+    <th>County</th>
+    <th>Club</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<% @runners.each do |runner| %>
+  <tr>
+    <td><%= link_to runner.first_name, edit_runner_path(runner) %></td>
+    <td><%= runner.last_name %></td>
+    <td><%= runner.gender %></td>
+    <td><%= runner.date_of_birth %></td>
+    <td><%= runner.county %></td>
+    <td><%= runner.club %></td>
+    <td><%= link_to 'Destroy', runner, :method => :delete, :confirm => 'Are you sure?' %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+

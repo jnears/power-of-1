@@ -33,7 +33,10 @@
 
     <div class="field">
       <%= f.label :coach_id %>
-       <%= f.select :coach_id, Coach.find(:all, :order => "first_name,last_name").collect {|s| [(s.first_name + " " + s.last_name), s.id]} %>
+
+   
+
+       <%= f.select :coach_id, Coach.find(:all, :order => "first_name,last_name").collect {|s| [s.name, s.id]} %>
     </div>
   </fieldset>
 

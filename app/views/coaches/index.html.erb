@@ -1,0 +1,23 @@
+<h1>Runners Index page</h1>
+<p><%= @coaches.count %> coaches listed</p>
+<%= notice %>
+<p><%= link_to "Add Coach", new_coach_path %></p>
+<table>
+    <thead>
+  <tr>
+    <th>Name</th>
+    <th>Group Level</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<% @coaches.each do |coach| %>
+  <tr>
+    <td><%= link_to coach.name, edit_coach_path(coach) %></td>
+    <td><%= coach.group_level %></td>
+    <td><%= link_to 'Destroy', coach, :method => :delete, :confirm => 'Are you sure?' %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+

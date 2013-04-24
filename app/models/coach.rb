@@ -3,4 +3,8 @@ class Coach < ActiveRecord::Base
 
   #a coach can have many runners
   has_many :runners
+
+  def name
+      first_name + " " + last_name
+    end
 end

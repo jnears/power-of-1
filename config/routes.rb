@@ -12,6 +12,7 @@ PowerOf1::Application.routes.draw do
   #this is a resourceful route - it declares all the routes available
   
   resources :runners
+  resources :coaches
 
 
 

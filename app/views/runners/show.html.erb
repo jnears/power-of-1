@@ -1,5 +1,9 @@
 <h1><%= @runner.first_name %> <%= @runner.last_name %></h1>
+<p><%= link_to 'Edit', edit_runner_path(@runner) %></p>
+<p><%= @runner.gender %></p>
+<p><%= @runner.club %></p>
+<p><%= @runner.county %></p>
+<p><%= @runner.date_of_birth %></p>
+
 
 <%= link_to 'Back home', runners_path %>
-<%= link_to 'New', new_runner_path %>
-<%= link_to 'Edit', edit_runner_path(@runner) %>

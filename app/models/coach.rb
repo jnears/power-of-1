@@ -4,7 +4,12 @@ class Coach < ActiveRecord::Base
   #a coach can have many runners
   has_many :runners
 
-  def name
+  def coach_name
       first_name + " " + last_name
-    end
+  end
+  
+  #set up a variable that contains the values to enter in to the select list for group levels
+  #NOTE: variable name must be uppercase
+  GROUP_LEVELS = ["Basic", "Intermediate", "Advanced"]
+
 end

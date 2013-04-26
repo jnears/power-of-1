@@ -15,7 +15,8 @@
     </div>
     <div class="field">
       <%= f.label :group_level %>
-      <%= f.text_field :group_level %>
+      <!-- select list pulls in the values from the method in the coach controller-->
+      <%= f.select(:group_level, Coach::GROUP_LEVELS) %>
     </div>
     <%= @coach.id %>
   </fieldset>

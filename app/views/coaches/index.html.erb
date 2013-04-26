@@ -13,7 +13,7 @@
 <tbody>
 <% @coaches.each do |coach| %>
   <tr>
-    <td><%= link_to coach.name, edit_coach_path(coach) %></td>
+    <td><%= link_to coach.coach_name, edit_coach_path(coach) %></td>
     <td><%= coach.group_level %></td>
     <td><%= link_to 'Destroy', coach, :method => :delete, :confirm => 'Are you sure?' %></td>
   </tr>

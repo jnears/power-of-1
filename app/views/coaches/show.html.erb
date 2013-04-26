@@ -1,6 +1,12 @@
-<h1>Coach</h1>
-<%= @coaches.first_name %>
-<%= @coaches.last_name %>
-<%= @coaches.group_level %>
+<h1><%= @coaches.name %></h1>
+<p>Group Level: <%= @coaches.group_level %></p>
 
 <p>Runners in Group: <%= @coaches.runners.count %></p>
+
+
+
+
+
+
+<%= link_to "Edit", edit_coach_path %>
+<%= link_to "View all coaches", coaches_path %>

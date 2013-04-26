@@ -1,29 +1,25 @@
 class RunnersController < ApplicationController
-#removes the need to specifically define respond_to formats for each route
-respond_to :html, :xml, :json
+
+
 
    def index
-    respond_with(@runners = Runner.all)
+    @runner = Runner.find(:all)
   end
 
 
   # GET /runner/1
   # GET /runners/1.json
 
-  def show
-    respond_with(@runner = Runner.find(params[:id]))
-  end
+ 
 
   # GET /runners/1/edit
-  def edit
-    respond_with(@runner = Runner.find(params[:id]))
+ def edit
+    @runner = Runner.find(params[:id])
   end
   
  # GET /runner/new
   # GET /runner/new.json
-  def new
-    respond_with(@runner = Runner.new)
-  end
+ 
 
   # DELETE /runners/1
   # DELETE /ruuners/1.json

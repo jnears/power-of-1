@@ -14,16 +14,34 @@ respond_to :html, :xml, :json
     respond_with(@coaches = Coach.find(params[:id]))
   end
 
-  # GET /runners/1/edit
+  # GET /coaches/1/edit
   def edit
     respond_with(@coach = Coach.find(params[:id]))
   end
+
+  # GET /coach/new
+  # GET /coach/new.json
+  def new
+    respond_with(@coach = Coach.new)
+  end
+  
+  def create
+     @coach = Coach.new(params[:coach])
+     
+     respond_to do |format|
+      if @coach.save
+        format.html { redirect_to(coaches_path, :notice => 'Coach was successfully added.') }
+      else
+        format.html { render :action => "new" }
+      end
+    end
+  end 
 
   def update
      @coach = Coach.find(params[:id])
      respond_to do |format|
       if @coach.update_attributes(params[:coach])
-        format.html { redirect_to(coaches_path, :notice => 'Page was successfully updated.') }
+        format.html { redirect_to(coaches_path, :notice => 'Coach was successfully updated.') }
       else
         format.html { render :action => "edit" }
       end

@@ -7,4 +7,15 @@ class Runner < ActiveRecord::Base
 
     validates :first_name, :last_name, :gender, :county, :club, :date_of_birth, :presence => true
 
+  def runner_name
+      first_name + " " + last_name
+  end 
+
+
+  def coach_name 
+      if coach.present?    
+      coach.coach_name
+    end
+  end 
+
 end
